@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwbfhlkb3d4j"]
+
+[ext_resource type="FontFile" uid="uid://5omrdyp2eqxt" path="res://Pixel Game.otf" id="1_yhkva"]
+[ext_resource type="Script" path="res://button_title_play.gd" id="2_6v3g1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_860m2"]
+line_spacing = 1.0
+font = ExtResource("1_yhkva")
+font_size = 115
+font_color = Color(1, 1, 0.0156863, 1)
+outline_size = 25
+outline_color = Color(0.0100903, 0.0100903, 0.0100903, 1)
+shadow_size = 55
+shadow_color = Color(0.910609, 0, 0.154305, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+color = Color(0.798173, 0.651988, 0.56373, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 1150.0
+offset_bottom = 324.0
+text = "Coin Hunter"
+label_settings = SubResource("LabelSettings_860m2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_title_play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 379.0
+offset_right = 665.0
+offset_bottom = 495.0
+theme_override_colors/font_disabled_color = Color(0.517738, 7.70092e-07, 0.311991, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.337255, 1, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0.67451, 1)
+theme_override_colors/font_color = Color(0.999179, 0.00135652, 0.000744486, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("1_yhkva")
+theme_override_font_sizes/font_size = 100
+text = "PLAY!"
+flat = true
+script = ExtResource("2_6v3g1")
+
+[connection signal="pressed" from="Button_title_play" to="Button_title_play" method="_on_pressed"]

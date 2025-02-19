@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5pl73vie0nij"]
+
+[ext_resource type="FontFile" uid="uid://5omrdyp2eqxt" path="res://Pixel Game.otf" id="1_wngbh"]
+[ext_resource type="Script" path="res://play_again_button.gd" id="2_wcmc2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3w6ht"]
+line_spacing = 1.0
+font = ExtResource("1_wngbh")
+font_size = 130
+font_color = Color(0, 0, 0, 1)
+outline_size = 25
+outline_color = Color(0.978656, 0.454014, 5.77569e-07, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 644.0
+color = Color(0, 1, 0.0431373, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 358.0
+text = "YOU WON!"
+label_settings = SubResource("LabelSettings_3w6ht")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="play_again_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 358.0
+offset_right = 810.0
+offset_bottom = 504.0
+theme_override_colors/font_hover_pressed_color = Color(0.964919, 0.11104, 0.374813, 1)
+theme_override_colors/font_hover_color = Color(0.738067, 0.101404, 0.380108, 1)
+theme_override_colors/font_pressed_color = Color(0.608157, 0.0758067, 0.288157, 1)
+theme_override_colors/font_color = Color(1, 0, 0.0166664, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("1_wngbh")
+theme_override_font_sizes/font_size = 85
+text = "PLAY AGAIN ?"
+flat = true
+script = ExtResource("2_wcmc2")
+
+[connection signal="pressed" from="play_again_button" to="play_again_button" method="_on_pressed"]
